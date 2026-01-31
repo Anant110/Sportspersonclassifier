@@ -38,6 +38,9 @@ def home():
 def static_files(path):
     return send_from_directory(UI_DIR, path)
 
+# ✅ LOAD MODELS ON STARTUP (IMPORTANT)
+util.load_saved_artifacts()
+
 @app.route("/classify_image", methods=["POST"])
 def classify_image():
     try:
