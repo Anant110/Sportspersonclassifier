@@ -40,6 +40,10 @@ def static_files(path):
 
 @app.route("/classify_image", methods=["POST"])
 def classify_image():
-    image_data = request.form["image_data"]
-    return jsonify(util.classify_image(image_data))
+    try:
+        image_data = request.form["image_data"]
+        return jsonify(util.classify_image(image_data))
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({"error": str(e)}), 500
 
