@@ -126,7 +126,7 @@ function init() {
         let reader = new FileReader();
         reader.onload = function (e) {
             $.post(
-                "http://127.0.0.1:5000/classify_image",
+                "/classify_image",
                 { image_data: e.target.result },
                 function (data) {
 
