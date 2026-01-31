@@ -3,7 +3,9 @@ import json
 import numpy as np
 import base64
 import cv2
-from wavelet import w2d
+# In Server/util.py
+from .wavelet import w2d
+
 
 __class_name_to_number={}
 __class_number_to_name={}
